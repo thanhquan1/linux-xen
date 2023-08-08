@@ -1214,7 +1214,7 @@ static bool rswitch_rx_chain(struct net_device *ndev, int *quota, struct rswitch
 		// Replace skb dev with real device so vlan_do_receive can work properly
 		if (is_vlan_dev(skb->dev))
 			skb->dev = vlan_dev_real_dev(skb->dev);
-		netif_receive_skb(skb);
+		napi_gro_receive(&rdev->napi, skb);
 		rdev->ndev->stats.rx_packets++;
 		rdev->ndev->stats.rx_bytes += pkt_len;
 
