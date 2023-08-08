@@ -3080,9 +3080,11 @@ static void rswitch_reset(struct rswitch_private *priv)
 
 		rs_write32(0, priv->serdes_addr + RSWITCH_SERDES_LOCAL_OFFSET);
 
+#if 0
 		reset_control_assert(priv->sd_rst);
 		mdelay(1);
 		reset_control_deassert(priv->sd_rst);
+#endif
 	} else {
 		int gwca_idx;
 		u32 gwro_offset;
