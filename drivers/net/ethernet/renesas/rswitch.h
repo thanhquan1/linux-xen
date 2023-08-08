@@ -311,6 +311,7 @@ struct rswitch_private {
 	struct workqueue_struct *rswitch_forward_wq;
 
 	u8 chan_running;
+	bool serdes_common_init;
 };
 
 struct rswitch_device {
