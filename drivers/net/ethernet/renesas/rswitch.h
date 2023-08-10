@@ -160,6 +160,12 @@ struct rswitch_ext_ts_desc {
 	__le32 ts_sec;
 } __packed;
 
+#define DESC_INFO1_FMT		BIT(2)
+#define DESC_INFO1_CSD0_SHIFT	32
+#define DESC_INFO1_CSD1_SHIFT	40
+#define DESC_INFO1_DV_SHIFT	48
+
+
 #define INFO1_FMT		BIT(2)
 
 #define INFO1_IPV(prio)		((u64)(prio) << 28ULL)
